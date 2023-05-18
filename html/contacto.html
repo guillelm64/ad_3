@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formularios</title>
+        <link rel="stylesheet" href="../css/estilo_contacto.css">
+    </head>
+    <body>
+        <h1>Reserva de Matrícula</h1>
+
+        <div class="fondo">
+            <a href="../xml/instituto.xml" class="home">Atrás</a>
+        </div>
+
+        <form action="procesarPeticion.jsp" method="get" >
+
+            Nombre:</br></br> <input type="text" name="nombre"  required> </br></br>
+            
+            Apellidos: </br></br><input type="text"  name="apellido" required></br></br>
+            
+            Dirección: </br></br><input type="text" name="direccion" required></br></br>
+            
+            Teléfono de Contacto:</br></br> <input type="tel" name="telefono" required></br></br>
+
+            Correo Electrónico: </br></br><input type="email" name="mail" required></br></br>
+            
+            Fecha de nacimiento:</br></br> <input type="date"  name="fec_nac" required></br></br>
+
+            País de Nacimiento:</br></br> <input type="text" name="pais_nac" required></br></br>
+
+            Estado Civil:</br></br> 
+                <select name="estado_civil"  required>
+                    <option value="">--Seleccione--</option>
+                    <option value="casado/a">Casado/a</option>
+                    <option value="soltero/a">Soltero/a</option>
+                    <option value="viudo/a">Viudo/a</option>
+                    <option value="divociado/a">Divorciado/a</option>
+                    <option value="prefiero no decir">Prefiero no decirlo</option>
+                </select>
+            </br></br>
+            Género: </br></br>
+                <select name="genero" required>
+                    <option value="">--Seleccione--</option>
+                    <option value="Hombre">Hombre</option>
+                    <option value="Mujer">Mujer</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </br></br>
+            Master de Interés:</br></br> 
+                <select name="master-interes" required>
+                    <option value="">--Seleccione--</option>
+                    <option value="IA">IA</option>
+                    <option value="Ciencia de Datos">Ciencia de Datos</option>
+                    <option value="Matemática Computacional">Matemática Computacional</option>
+                </select>
+
+            </br></br>
+
+            Nivel de Estudios: </br></br>
+                <select name="nivel-estudios" required>
+                    <option value="">--Seleccione--</option>
+                    <option value="Grado">Grado Universitario</option>
+                    <option value="Master">Master</option>
+                    <option value="Doctorado">Doctorado</option>
+                    <option value="Pos Doctorado">Pos Doctorado</option>
+                    <option value="Diplomatura">Diplomatura</option>
+                </select>
+            
+            </br></br>
+            ¿Quieres decirnos algo? </br></br> 
+                <textarea type="text" id="sugerencias" name="sugerencia" placeholder="Cuéntanos">
+                </textarea>
+
+            </br></br>
+            <button type="submit">Enviar</button>
+        </form>
+    </body>
+    </html>      

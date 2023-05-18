@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+
+<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+   
+    <xsl:template match="/">
+      
+        <contacto>
+            <xsl:attribute name="numero">
+                <xsl:value-of select="empresa/telefono"/>
+            </xsl:attribute>
+        </contacto>
+
+        <docentes>
+            <xsl:for-each select="instituto/empresa/profesores/profesor">
+                <docente>
+                    <xsl:attribute name="id">
+                        <xsl:value-of select="profesor/id"></xsl:value-of>
+                    </xsl:attribute>
+                    <nombre><xsl:value-of select="profesor/nombre"></xsl:value-of></nombre>
+                </docente>
+            </xsl:for-each>
+        </docentes>
+        <director>
+            <xsl:for-each select="instituto/empresa/director">
+                <xsl:attribute name="id">01</xsl:attribute>
+                <nombre><xsl:value-of select="director/nombre"></xsl:value-of></nombre>
+                <direccion><xsl:value-of select="director/despacho"/></direccion>
+            </xsl:for-each>
+        </director>
+        <jefe_estudios>
+            <xsl:for-each select="instituto/empresa/jefe_estudios">
+                <xsl:attribute name="id">01</xsl:attribute>
+                <nombre><xsl:value-of select="jefe_estudios/nombre"></xsl:value-of></nombre>
+                <direccion><xsl:value-of select="jefe_estudios/despacho"/></direccion>
+            </xsl:for-each>
+        </jefe_estudios>
+        <estudios>
+            <xsl:for-each select="instituto/empresa/ciclos/ciclo"></xsl:for-each>
+                <estudio>
+                    <xsl:attribute name="id">
+                        <xsl:value-of select="ciclo/grado"/>
+                    </xsl:attribute>
+                    <siglas>
+                        <xsl:value-of select="ciclo/@id"></xsl:value-of>
+                    </siglas>
+                    <nombre>
+                        <xsl:value-of select="ciclo/nombre"/>
+                    </nombre>
+                    <anio_aprobado>
+                        <xsl:value-of select="ciclo/decretoTitulo"/>
+                    </anio_aprobado>
+                </estudio>
+        </estudios>
+
+        
+    </xsl:template>
+</xsl:stylesheet>
